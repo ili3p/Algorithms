@@ -1,0 +1,8 @@
+Number of comparisons: 
+	With first element as pivot:							162085
+	With last element as pivot:								164123
+	With median element as pivot:							138382
+	With multi median element with 100 samples as pivot:	113810
+	With random element as pivot:							164862
+Note: nlog(n) : 10000log(10000):							 92103
+    : n*n : 10000*10000:		 100000000

@@ -1,0 +1,31 @@
+/**
+	 * Though Netty + Java provide WRAPPER FACADES for all of the underlying
+	 * functionality of this program, this function is a light wrapper for the
+	 * Netty boilerplate you can see below. In a different context, we may have
+	 * had an interface like this:
+	 * 
+	 * interface IServer { public static void accept(int port) throws Exception;
+	 * }
+	 * 
+	 * This would act as a wrapper facade for different underlying frameworks or
+	 * customized implementations we may have used.
+	 * 
+	 * 
+	 * 
+	 * As for this implementation, the code in this funciton ultimately sets up
+	 * a ServerSocketChannel which accepts incoming TCP/IP connections and acts
+	 * as our ACCEPTOR.
+	 * 
+	 * To set this up as a HALF SYNC / HALF ASYNC server we provide an
+	 * ExecutionHandler using an OrderedMemoryAwareThreadPoolExecutor. This
+	 * provides a context for executing blocking (synchronous) calls. See an
+	 * overview of the strategy I'm using here: http://netty.io/3.6/guide/#faq.4
+	 * 
+	 * 
+	 * Requests are accepted asynchronously with the boss/worker threads
+	 * provided to the NioServerSocketChannelFactory (see this page:
+	 * http://netty.io/3.5/api/org/jboss/netty/channel/socket/nio/
+	 * NioServerSocketChannelFactory.html)
+	 * 
+	 * 
+	 * */
